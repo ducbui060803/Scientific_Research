@@ -1,0 +1,25 @@
+--cpu=Cortex-M4.fp.sp
+"pid_enc\startup_stm32f411xe.o"
+"pid_enc\main.o"
+"pid_enc\stm32f4xx_it.o"
+"pid_enc\stm32f4xx_hal_msp.o"
+"pid_enc\stm32f4xx_hal_tim.o"
+"pid_enc\stm32f4xx_hal_tim_ex.o"
+"pid_enc\stm32f4xx_hal_rcc.o"
+"pid_enc\stm32f4xx_hal_rcc_ex.o"
+"pid_enc\stm32f4xx_hal_flash.o"
+"pid_enc\stm32f4xx_hal_flash_ex.o"
+"pid_enc\stm32f4xx_hal_flash_ramfunc.o"
+"pid_enc\stm32f4xx_hal_gpio.o"
+"pid_enc\stm32f4xx_hal_dma_ex.o"
+"pid_enc\stm32f4xx_hal_dma.o"
+"pid_enc\stm32f4xx_hal_pwr.o"
+"pid_enc\stm32f4xx_hal_pwr_ex.o"
+"pid_enc\stm32f4xx_hal_cortex.o"
+"pid_enc\stm32f4xx_hal.o"
+"pid_enc\stm32f4xx_hal_exti.o"
+"pid_enc\system_stm32f4xx.o"
+--strict --scatter "PID_ENC\PID_ENC.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "PID_ENC.map" -o PID_ENC\PID_ENC.axf

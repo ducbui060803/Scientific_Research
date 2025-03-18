@@ -1,0 +1,79 @@
+[System]
+Name='fuzzy_wmr'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=25
+AndMethod='prod'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='distance'
+Range=[0 5]
+NumMFs=5
+MF1='VS':'trimf',[-1.25 0 1.25]
+MF2='S':'trimf',[0 1.25 2.5]
+MF3='M':'trimf',[1.25 2.5 3.75]
+MF4='B':'trimf',[2.5 3.75 5]
+MF5='VB':'trimf',[3.76 5 100]
+
+[Input2]
+Name='alpha'
+Range=[-3.14159265358979 3.14159265358979]
+NumMFs=5
+MF1='NB':'trimf',[-4.712 -3.142 -1.571]
+MF2='NS':'trimf',[-3.142 -1.571 0]
+MF3='ZE':'trimf',[-1.58428541226216 -0.0132854122621557 1.55771458773784]
+MF4='PS':'trimf',[2.22e-16 1.571 3.142]
+MF5='PB':'trimf',[1.571 3.142 4.712]
+
+[Output1]
+Name='omega_R'
+Range=[-120 120]
+NumMFs=5
+MF1='NB':'trimf',[-180 -120 -60]
+MF2='NS':'trimf',[-120 -60 0]
+MF3='ZE':'trimf',[-60 0 60]
+MF4='PS':'trimf',[0 60 120]
+MF5='PB':'trimf',[60 120 180]
+
+[Output2]
+Name='omega_L'
+Range=[-120 120]
+NumMFs=5
+MF1='NB':'trimf',[-180 -120 -60]
+MF2='NS':'trimf',[-120 -60 0]
+MF3='ZE':'trimf',[-60 0 60]
+MF4='PS':'trimf',[0 60 120]
+MF5='PB':'trimf',[60 120 180]
+
+[Rules]
+1 1, 2 5 (1) : 1
+2 1, 2 5 (1) : 1
+3 1, 4 5 (1) : 1
+4 1, 4 5 (1) : 1
+5 1, 4 5 (1) : 1
+1 2, 2 3 (1) : 1
+2 2, 3 4 (1) : 1
+3 2, 3 4 (1) : 1
+4 2, 4 5 (1) : 1
+5 2, 4 5 (1) : 1
+1 3, 3 3 (1) : 1
+2 3, 4 3 (1) : 1
+3 3, 4 4 (1) : 1
+4 3, 5 5 (1) : 1
+5 3, 5 5 (1) : 1
+1 4, 3 2 (1) : 1
+2 4, 4 3 (1) : 1
+3 4, 4 3 (1) : 1
+4 4, 4 4 (1) : 1
+5 4, 5 4 (1) : 1
+1 5, 4 2 (1) : 1
+2 5, 5 3 (1) : 1
+3 5, 5 4 (1) : 1
+4 5, 5 4 (1) : 1
+5 5, 5 5 (1) : 1
